@@ -6,12 +6,28 @@ using namespace std;
 
 int main()
 {
-    // TODO: declare variable n for the exponent input
+    int n = 0; // Input integer 'n' from directions
+  double result = 1.0; // Initialize result as per directions
 
-    // TODO: read n from standard input
+  cout << "Enter the integer n: ";
+  cin >> n;
 
-    // TODO: compute 2 to the power of n using a loop (no cmath pow)
-    // For positive n: multiply result by 2, n times
-    // For negative n: divide result by 2, |n| times
+  // If n >= 0: loop n times, multiply result by 2 each iteration
+  if (n >= 0) {
+    for (int i = 0; i < n; ++i) {
+      result *= 2;
+    }
+  }
+  // If n < 0: loop |n| times, divide result by 2 each iteration
+  else {
+    int abs_n = abs(n);
+    for (int i = 0; i < abs_n; ++i) {
+      result /= 2;
+    }
+  }
 
+  // Print result with 5 decimal places
+  cout << fixed << setprecision(5) << result << endl;
+
+  return 0;
 }
